@@ -81,7 +81,6 @@ nav .videos {
     position: absolute;
     /* Posición absoluta para el submenú */
     top: 80%;
-    /* Se muestra justo debajo del elemento padre */
     left: 0;
     margin-top: 50%;
     max-height: 0;
@@ -99,7 +98,7 @@ nav .videos {
     background-color: #e34c26;
     padding: 10px;
     font-size: 0.7em;
-    
+
 }
 
 .videos ul li:nth-child(odd) {
@@ -149,7 +148,7 @@ nav .contacto {
 nav a {
     text-decoration: none;
     color: white;
-    text-shadow: 2px 2px  #f06529;
+    text-shadow: 2px 2px #f06529;
     transition: 0.5s;
 }
 
@@ -158,74 +157,144 @@ nav a:hover {
     text-shadow: 0px 0px 5px #ff7e42;
 }
 
-/* Elemento main */
+
 main {
-    font-family: 'Abel';
-    font-size: 0.8em;
-    display: inline-flex;
-    background-color: white;
-}
-
-/* Elementos de clase section */
-section {
-    width: 240px;
-    background-color: white;
+    background-image: url("../img/fondoForm.jpg");
+    background-size: cover;
     text-align: center;
-    line-height: 1.8em;
-    padding-bottom: 20px;
-    margin: 30px;
-    border-width: 60px 20px 60px 20px;
-    border-image: url('../img/movil.png');
-    border-style: solid;
-    border-image-slice: 70 25 70 25;
+}
+
+#contenedorFormulario {
     position: relative;
-    font-family: 'Abel';
+    display: inline-block;
+    margin: 50px;
+    width: 600px;
+    padding: 20px 50px;
+    background-color: rgba(200, 200, 200, 0.7);
+    text-align: left;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Elementos de clase article */
-article {
-    border-bottom: 1px solid #999999;
+ul {
+    list-style: none; /* Elimina las viñetas */
 }
 
-/* Elementos de #js */
-article>#js {
-    background-image: radial-gradient(yellow, white);
-}
+@import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
 
-/* Elementos <h2> */
-article h2 {
-    padding: 10px;
-    font-family: 'Abel';
-    font-size: 1.2em;
-    text-shadow: 2px 2px 5px black;
-}
-
-section:first-of-type {
-    transform: rotate(-2deg);
-}
-
-section:last-of-type {
-    transform: rotate(2deg);
-}
-
-.chincheta {
-    background-image: url("../img/chincheta.png");
-    width: 35px;
-    height: 49px;
+#contenedorFormulario>h1 {
     position: absolute;
-    top: -90px;
+    top: -16px;
+    left: 460px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Aguafina Script', cursive;
+    color: #333;
+    letter-spacing: 5px;
+    text-shadow: 0px 2px 2px #777;
+    padding: 0px 10px;
 }
 
-#prim {
-    left: 199px;
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    box-shadow:
+        0px 1px 4px rgba(0, 0, 0, 0.3) /* Sombra externa */,
+        inset 0px 0px 40px rgba(0, 0, 0, 0.1);  /* Sombra interna */
+    color: black;
+    font-weight: bold;
+    padding: 1px 45px 1px 4px;
+    margin-bottom: 10px;
+    transition: all 0.4s ease-in;
+    width: calc(100% - 10px);
+    /* Para asegurarte de que ocupa todo el ancho disponible */
+    box-sizing: border-box;
+    /* Incluye el padding y el border en el ancho total */
 }
 
-#seg {
-    left: 120px;
+#nombre,
+#email {
+    height: 32px; 
+    width: 330px; 
+    padding-left: 40px; 
+    background-size: 20px; 
+    background-repeat: no-repeat; 
+    transition: all 0.4s ease-in; /* Aseguramos que la transición está presente */
 }
 
-#ter {
-    left: 30px;
+#nombre {
+    background-image: url("../img/icon-nombre.png");
+    background-position: 10px center;
+
+}
+
+#email {
+    background-image: url("../img/icon-mensaje.png");
+    background-position: 10px center;
+
+}
+
+#nombre:focus, #email:focus {
+    width: 370px;
+    box-shadow: 0px 0px 12px rgb(255, 255, 255);
+}
+
+#nombre:focus:valid{
+    background-image: url("../img/icon-nombre.png") , url("../img/valid.png");
+    background-repeat: no-repeat;
+    background-position: 10px center, 347px center;
+}
+
+#email:focus:valid{
+    background-image: url("../img/icon-correo.png") , url("../img/valid.png");
+    background-repeat: no-repeat;
+    background-position: 10px center, 347px center;
+}
+
+#nombre:focus:invalid{
+    background-image: url("../img/icon-nombre.png") , url("../img/invalid.png");
+    background-repeat: no-repeat;
+    background-position: 10px center, 347px center;
+}
+
+#email:focus:invalid {
+    background-image: url("../img/icon-correo.png") , url("../img/invalid.png");
+    background-repeat: no-repeat;
+    background-position: 10px center, 347px center;
+}
+
+label::after {
+    content: '*';
+}
+
+#msj {
+    font-size: 1em;
+    width: 90%; 
+    height: 150px; 
+    background-image: url("../img/icon-mensaje.png"); 
+    background-repeat: no-repeat; 
+    background-position: 10px center; 
+    padding-left: 40px; 
+    transition: box-shadow 0.4s ease-in;
+}
+
+#msj:focus {
+    box-shadow: 0px 0px 12px rgb(255, 255, 255); /* Sombra al obtener foco */
+}
+
+
+button[name="env"]{
+    margin: 10px 0px;
+    padding: 10px;
+    border: 1px solid #434343;
+    color: white;
+    background: linear-gradient(#5e5e5e, #2a2a2a);
+    box-shadow: 1px 0px 1px #343434 inset;
+    cursor: pointer;
+}
+
+button[name="env"]:hover{
+    background: linear-gradient(#2a2a2a,#5e5e5e);
 }
 
 /* Elemento footer */
