@@ -40,6 +40,10 @@ header h1 {
 h1 img {
     position: absolute;
     left: 3%;
+    animation-name: logo;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 /* Elemento nav */
@@ -182,10 +186,7 @@ section {
     font-family: 'Abel';
 }
 
-/* Elementos de clase article */
-article {
-    border-bottom: 1px solid #999999;
-}
+
 
 /* Elementos de #js */
 article>#js {
@@ -198,6 +199,7 @@ article h2 {
     font-family: 'Abel';
     font-size: 1.2em;
     text-shadow: 2px 2px 5px black;
+    border-bottom: 1px solid #999999;
 }
 
 section:first-of-type {
@@ -238,6 +240,92 @@ footer {
     border-top: 6px solid black;
     padding: 15px 0;
     border-radius: 0px 0px 30px 30px;
+}
+
+/* ANIMACIONES */
+/*Foto logo*/
+@keyframes logo {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.chincheta1 {
+    left: 0px;
+    animation: mueveChincheta1 1s forwards;
+}
+
+@keyframes mueveChincheta1 {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 199px;
+    }
+}
+
+.article1 {
+    animation: animArticle1 0.5s forwards;
+}
+
+@keyframes animArticle1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-2deg);
+    }
+}
+
+.chincheta2 {
+    left: 0px;
+    animation: mueveChincheta2 1s forwards;
+}
+
+@keyframes mueveChincheta2 {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 120px;
+    }
+}
+
+.chincheta3 {
+    left: 0px;
+    animation: mueveChincheta3 1s forwards;
+}
+
+@keyframes mueveChincheta3 {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 30px;
+    }
+}
+
+.article3 {
+    animation: animArticle3 0.5s forwards;
+}
+
+@keyframes animArticle3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(2deg);
+    }
 }
 
 /* Enlaces dentro de footer */
