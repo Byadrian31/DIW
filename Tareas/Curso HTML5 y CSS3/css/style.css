@@ -56,6 +56,11 @@ nav {
 
 }
 
+#menu {
+    /* Enlace desplegable */
+    display: none;
+}
+
 /* Estilos para los elementos <li> */
 nav>ul>li {
     padding-top: 80px;
@@ -331,5 +336,66 @@ footer {
 /* Enlaces dentro de footer */
 footer a {
     color: white;
+
+}
+
+
+/* RESPONSIVE */
+
+@media all and (max-width: 1024px) {
+    #page {
+        width: 90%;
+        min-width: 320px;
+    }
+
+    header{
+        font-size: 0.7em;
+    }
+
+    nav li {
+        margin: 0% 8% 2% 8%;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media all and (max-width: 700px) {
+
+    nav li {
+        margin: 0% 4% 1% 4%;
+    }
+}
+
+@media all and (max-width: 475px) {
+
+    #menu {
+        display: block;
+        background-image: url('../img/menu.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 10px;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    nav li {
+        margin: 0px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.desplegado {
+        display: block;
+    }
+
 
 }

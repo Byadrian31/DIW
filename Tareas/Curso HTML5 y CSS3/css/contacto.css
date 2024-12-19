@@ -314,3 +314,34 @@ footer a {
     color: white;
 
 }
+
+@media all and (max-width: 1024px) {
+    #contenedorFormulario {
+        margin: 4%;
+        width: 58%;
+        padding: 2% 4%;
+    }
+
+    #contenedorFormulario h1 {
+        position: static;
+        padding: 0% 1%;
+        margin: 2% 0%;
+    }
+
+    input:not([type="submit"]) {
+        height: 5%;
+        width: 55%;
+    }
+
+    input:not([type="submit"]):focus {
+        width: 61%;   
+    }
+
+    textarea {
+        width: 75%;
+    }
+
+    input[type="submit"] {
+        display: block;
+    }
+}
