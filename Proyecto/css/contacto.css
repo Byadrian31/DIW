@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+/* ======================== */
 /* Estilos generales */
+/* ======================== */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Racing Sans One";
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
-    font-family: "Racing Sans One" ;
 }
 
-
-
+/* ======================== */
+/* Estilos para el encabezado */
+/* ======================== */
 header {
     background: linear-gradient(to right, #003366, #0059b3);
     color: white;
@@ -21,13 +24,16 @@ header {
     justify-content: space-around;
     align-items: center;
     position: relative;
-    width: 100%;
+    width: auto;
 }
 
 header .logo img {
     max-width: 120px;
 }
 
+/* ======================== */
+/* Estilos para el menú de navegación */
+/* ======================== */
 nav ul {
     list-style: none;
     display: flex;
@@ -65,7 +71,7 @@ nav ul li a {
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 1s;
 }
 
 nav ul li a:hover,
@@ -101,17 +107,25 @@ nav ul li a.active {
     color: white;
     text-decoration: none;
     display: block;
-    transition: background 0.3s;
+    transition: background 1s;
 }
 
-.dropdown-menu li a:hover {
+/* Estilos para los pares del submenú */
+.dropdown-menu li:nth-child(even) a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
+
+/* Estilos para los impares del submenú */
+.dropdown-menu li:nth-child(odd) a:hover {
+    background: rgb(249, 138, 3);
+}
+
 
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
+/* Estilos para el menú móvil */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -123,18 +137,30 @@ nav ul li a.active {
     border-radius: 3px;
 }
 
+/* ======================== */
+/* Estilos para el main */
+/* ======================== */
 main {
     flex: 1; /* Permite que el main ocupe el espacio restante */
     padding: 2rem;
-    background-image: url("../img/club.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url("../img/club.jpg"), url("../img/club2.jpg"); /* Varias imágenes */
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    background-position: center, center;
     color: yellow;
     text-align: center;
+    width: auto;
+    transition: background-image 0.5s ease-in-out; /* Transición para el cambio de fondo */
+    opacity: 0.95; /* Agrega un poco de opacidad al fondo */
 }
 
-/* Formulario*/
+/* Efecto al hacer hover en el fondo */
+main:hover {
+    background-image: url("../img/club.jpg");
+    opacity: 1; /* El fondo vuelve a opacidad normal al hacer hover */
+}
+
+/* Formulario */
 .inscripcion {
     background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
@@ -187,6 +213,38 @@ form {
     font-size: 1rem;
 }
 
+/* Estilo para campos válidos */
+.campo input:valid,
+.campo select:valid,
+.campo textarea:valid {
+    border-color: #4CAF50; /* Verde para los campos válidos */
+    background-color: rgba(76, 175, 80, 0.1); /* Fondo ligeramente verde */
+    border-left: 5px solid #4CAF50; /* Indicador verde en el borde izquierdo */
+}
+
+/* Estilo para campos inválidos */
+.campo input:invalid,
+.campo select:invalid,
+.campo textarea:invalid {
+    border-color: #F44336; /* Rojo para los campos inválidos */
+    background-color: rgba(244, 67, 54, 0.1); /* Fondo ligeramente rojo */
+    border-left: 5px solid #F44336; /* Indicador rojo en el borde izquierdo */
+}
+
+
+/* Estilo cuando un campo es válido y tiene foco */
+.campo input:focus:valid,
+.campo select:focus:valid,
+.campo textarea:focus:valid {
+    background-color: rgba(76, 175, 80, 0.2); /* Fondo verde más pronunciado */
+}
+
+.campo input:focus:invalid,
+.campo select:focus:invalid,
+.campo textarea:focus:invalid {
+    background-color: rgba(244, 67, 54, 0.2); /* Fondo rojo más pronunciado */
+}
+
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
@@ -209,7 +267,7 @@ form {
     border-radius: 5px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 1s ease;
     text-align: center;
 }
 
@@ -219,7 +277,7 @@ form {
 
 /* Ubicación */
 .ubicacion {
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(to bottom,  #ffffff, #003366);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -256,13 +314,16 @@ form {
     border-radius: 10px;
 }
 
+/* ======================== */
+/* Estilos para el footer */
+/* ======================== */
 footer {
     background: #003366;
     color: white;
     text-align: center;
     padding: 1rem; /* Cambiado a padding: 1rem; para evitar huecos */
     margin-top: auto; /* Asegura que el footer se mantenga al final */
-    width: 100%;
+    width: auto;
 }
 
 footer .patrocinador {
@@ -274,6 +335,9 @@ footer .patrocinador {
     animation: entrada 3s ease-out forwards; /* Animación de entrada */
 }
 
+/* ======================== */
+/* Estilos para la animación */
+/* ======================== */
 @keyframes entrada {
     from {
         opacity: 0;
@@ -310,7 +374,9 @@ footer p a {
     color: orange;
 }
 
-/* Diseño responsive */
+/* ======================== */
+/* Estilos responsive */
+/* ======================== */
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -345,5 +411,4 @@ footer p a {
     .mapa iframe {
         height: 300px;
     }
-
 }

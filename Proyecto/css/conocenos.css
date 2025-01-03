@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+/* ======================== */
 /* Estilos generales */
+/* ======================== */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Racing Sans One" ;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
-    font-family: "Racing Sans One" ;
 }
 
-
-
-
+/* ======================== */
+/* Estilos para el encabezado */
+/* ======================== */
 header {
     background: linear-gradient(to right, #003366, #0059b3);
     color: white;
@@ -22,13 +24,16 @@ header {
     justify-content: space-around;
     align-items: center;
     position: relative;
-    width: 100%;
+    width: auto;
 }
 
 header .logo img {
     max-width: 120px;
 }
 
+/* ======================== */
+/* Estilos para el menu */
+/* ======================== */
 nav ul {
     list-style: none;
     display: flex;
@@ -66,7 +71,7 @@ nav ul li a {
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 1s;
 }
 
 nav ul li a:hover,
@@ -102,12 +107,19 @@ nav ul li a.active {
     color: white;
     text-decoration: none;
     display: block;
-    transition: background 0.3s;
+    transition: background 1s;
 }
 
-.dropdown-menu li a:hover {
+/* Estilos para los pares del submenú */
+.dropdown-menu li:nth-child(even) a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
+
+/* Estilos para los impares del submenú */
+.dropdown-menu li:nth-child(odd) a:hover {
+    background: rgb(249, 138, 3);
+}
+
 
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -124,6 +136,9 @@ nav ul li a.active {
     border-radius: 3px;
 }
 
+/* ======================== */
+/* Estilos para el main */
+/* ======================== */
 main {
     flex: 1; /* Permite que el main ocupe el espacio restante */
     padding: 2rem;
@@ -133,6 +148,7 @@ main {
     background-position: center;
     color: yellow;
     text-align: center;
+    width: auto;
 }
 
 main h1 {
@@ -140,26 +156,37 @@ main h1 {
     font-size: 2rem;
 }
 
-
 section p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: orange;
-    text-shadow: 6px 6px 10px black;
-    background-color: rgb(8, 8, 168);
-    border-radius: 15px;
-
+    color: orange; /* Texto destacado */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* Sombras más suaves */
+    background-color: rgb(8, 8, 168); /* Fondo azul llamativo */
+    border-radius: 15px; /* Bordes redondeados */
+    text-align: center; /* Centrado del texto */
+    padding: 20px; /* Espaciado interno para mayor legibilidad */
+    margin: 20px auto; /* Espaciado externo y centrado en pantalla */
+    max-width: 800px; /* Limitar el ancho para mejor estética en dispositivos grandes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra alrededor para dar profundidad */
+    font-size: 1.2rem; /* Aumentar tamaño de texto */
+    line-height: 1.5; /* Espaciado entre líneas para legibilidad */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animación suave */
 }
 
+section p:hover {
+    transform: scale(1.05); /* Efecto de ampliación al pasar el ratón */
+    background-color: rgb(5, 5, 145); /* Fondo ligeramente más oscuro */
+    text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.8); /* Aumentar sombra al pasar el ratón */
+}
+
+/* ======================== */
+/* Estilos para el footer */
+/* ======================== */
 footer {
     background: #003366;
     color: white;
     text-align: center;
     padding: 1rem; /* Cambiado a padding: 1rem; para evitar huecos */
     margin-top: auto; /* Asegura que el footer se mantenga al final */
-    width: 100%;
+    width: auto;
 }
 
 footer .patrocinador {
@@ -171,6 +198,9 @@ footer .patrocinador {
     animation: entrada 3s ease-out forwards; /* Animación de entrada */
 }
 
+/* ======================== */
+/* Estilos para la animación */
+/* ======================== */
 @keyframes entrada {
     from {
         opacity: 0;
@@ -207,7 +237,9 @@ footer p a {
     color: orange;
 }
 
-/* Diseño responsive */
+/* ======================== */
+/* Estilos responsive */
+/* ======================== */
 @media (max-width: 768px) {
     nav ul {
         display: none;
